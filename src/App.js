@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
 import GPA from "./Components/gpa";
 
@@ -12,9 +11,9 @@ function App() {
 
   const addToList = () => {
 
-    if(courseName == ""){
+    if(courseName === ""){
       makeAlert1();
-    } else if(credits == "" || credits<0 ){
+    } else if(credits === "" || credits<0 ){
       makeAlert2();
     } else if(isNaN(credits)){
       makeAlert2();
@@ -37,13 +36,15 @@ function App() {
     //   sumOfCredits= sumOfCredits + gradeslist[i].credits;
     // }
 
-    gradeslist.map((obj) => {
+    const temp = gradeslist.map((obj) => {
       numSum = numSum + obj.credits * obj.grade;
       sumOfCredits = sumOfCredits + obj.credits * 1;
       console.log("Sum of Credits: " + sumOfCredits);
       console.log("Num Sum : " + numSum);
+      return numSum;
     });
 
+    console.log(temp);
     total = numSum / sumOfCredits;
 
     setfinalgpa(total);
