@@ -31,10 +31,6 @@ function App() {
     var sumOfCredits = 0;
     var numSum = 0;
     var total = 0;
-    // for(let i=0;i<gradeslist.length;i++){
-    //   numSum = numSum + ((gradeslist[i].credits)*(gradeslist[i].grade));
-    //   sumOfCredits= sumOfCredits + gradeslist[i].credits;
-    // }
 
     const temp = gradeslist.map((obj) => {
       numSum = numSum + obj.credits * obj.grade;
